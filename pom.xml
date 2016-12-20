@@ -8,16 +8,12 @@
 
     <groupId>com.zp4rker</groupId>
     <artifactId>freborn</artifactId>
-    <version>1.0</version>
+    <version>0.1</version>
 
     <repositories>
         <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
@@ -26,12 +22,6 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.11-R0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.austinv11</groupId>
-            <artifactId>Discord4j</artifactId>
-            <version>2.6.1</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -58,32 +48,6 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>com.zp4rker.freborn.FReborn</mainClass>
-                        </manifest>
-                    </archive>
-                    <finalName>${project.name} ${project.version}</finalName>
-                    <appendAssemblyId>false</appendAssemblyId>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>generate-dependency-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
